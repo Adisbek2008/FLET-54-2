@@ -24,13 +24,13 @@ def main(page: ft.Page):
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             greeting_history.append(f"{timestamp} - {name}")
             history_text.value = "История приветствий:\n" + "\n".join(greeting_history)
-            if timestamp >= "6:00:00" or timestamp <= "12:00:00":
+            if timestamp >= "6:00:00" and timestamp <= "12:00:00":
                 greeting_text.value = f"Доброе утро, {name}"
-            elif timestamp >= "12:00:00" or timestamp <= "18:00:00":
+            elif timestamp >= "12:00:00" and timestamp <= "18:00:00":
                 greeting_text.value = f"Добрый день, {name}"
-            elif timestamp >= "18:00:00" or timestamp <= "24:00:00":
+            elif timestamp >= "18:00:00" and timestamp <= "24:00:00":
                 greeting_text.value = f"Добрый вечер, {name}"
-            elif timestamp >= "24:00:00" or timestamp <= "6:00:00":
+            elif timestamp >= "24:00:00" and timestamp <= "6:00:00":
                 greeting_text.value = f"Добрый ночи, {name}"
         else:
             greeting_text.value = "Пожалуйста, введите ваше имя"
